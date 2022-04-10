@@ -78,7 +78,9 @@ function touch() {
 document.addEventListener('touchstart', touch);
 document.addEventListener('touchend', ()=> {
 	document.removeEventListener('touchstart', touch);
-	document.addEventListener('touchstart', touch);
+	setTimeout(()=> {
+		document.addEventListener('touchstart', touch);
+	}, 5)
 });
 
 window.addEventListener('load', init);
