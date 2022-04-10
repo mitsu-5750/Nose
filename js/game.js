@@ -80,7 +80,7 @@ document.addEventListener('touchend', ()=> {
 	document.removeEventListener('touchstart', touch);
 	setTimeout(()=> {
 		document.addEventListener('touchstart', touch);
-	}, 5)
+	}, 1)
 });
 
 window.addEventListener('load', init);
