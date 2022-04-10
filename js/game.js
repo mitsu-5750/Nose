@@ -74,4 +74,12 @@ document.addEventListener('touchstart', (e) => {
 	count++;
 });
 
+document.addEventListener('touchstart', (e) => {
+	body.innerHTML += `${count} `;
+	for (let obj of e.targetTouches) {
+		body.innerHTML += `${obj.clientX}<br>`;
+	}
+	count++;
+});
+
 window.addEventListener('load', init);
