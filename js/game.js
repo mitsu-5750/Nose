@@ -66,15 +66,7 @@ function update() {
 
 let count = 0;
 let body = document.body;
-document.addEventListener('touchstart', (e) => {
-	body.innerHTML += `${count} `;
-	for (let obj of e.targetTouches) {
-		body.innerHTML += `${obj.clientX}<br>`;
-	}
-	count++;
-});
-
-document.addEventListener('touchstart', (e) => {
+document.addEventListener('touchstart', function(e) {
 	body.innerHTML += `${count} `;
 	for (let obj of e.targetTouches) {
 		body.innerHTML += `${obj.clientX}<br>`;
