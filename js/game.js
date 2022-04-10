@@ -6,7 +6,7 @@ function init() {
 	hana = new Object({ 'x': (cvs.width - 300) / 2, 'y': 0, 'dx': 300, 'dy': 300, 'mx': 0, 'my': 0 }, 'img/hana0.png');
 	yubi = new Object({ 'x': 0, 'y': 300, 'dx': 200, 'dy': 300, 'mx': 1, 'my': 0 }, 'img/yubi.png');
 
-	update();
+	// update();
 }
 
 class Object {
@@ -63,5 +63,15 @@ function update() {
 
 	window.requestAnimationFrame(update);
 }
+
+let count = 0;
+let body = document.body;
+document.addEventListener('touchstart', (e) => {
+	body.innerHTML += `${count} `;
+	for (let obj of e.targetTouches) {
+		body.innerHTML += `${obj.clientX}<br>`;
+	}
+	count++;
+});
 
 window.addEventListener('load', init);
