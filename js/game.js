@@ -67,7 +67,9 @@ function update() {
 let count = 0;
 let body = document.body;
 
-function touch() {
+function touch(event) {
+	event.preventDefault();
+
 	body.innerHTML += `${count} `;
 	for (let obj of event.targetTouches) {
 		body.innerHTML += `${obj.clientX}<br>`;
@@ -75,16 +77,10 @@ function touch() {
 	count++;
 }
 
-// document.addEventListener('touchstart', touch);
-// document.addEventListener('touchend', ()=> {
-// 	document.removeEventListener('touchstart', touch);
-// 	setTimeout(()=> {
-// 		document.addEventListener('touchstart', touch);
-// 	}, 1)
-// });
+document.addEventListener('touchstart', touch, { passive: false });
 
-document.addEventListener('touchcancel', ()=> {
-	alert(0);
-})
+// document.addEventListener('touchcancel', ()=> {
+// 	alert(0);
+// })
 
 window.addEventListener('load', init);
