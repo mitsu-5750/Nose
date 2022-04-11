@@ -75,12 +75,16 @@ function touch() {
 	count++;
 }
 
-document.addEventListener('touchstart', touch);
-document.addEventListener('touchend', ()=> {
-	document.removeEventListener('touchstart', touch);
-	setTimeout(()=> {
-		document.addEventListener('touchstart', touch);
-	}, 1)
-});
+// document.addEventListener('touchstart', touch);
+// document.addEventListener('touchend', ()=> {
+// 	document.removeEventListener('touchstart', touch);
+// 	setTimeout(()=> {
+// 		document.addEventListener('touchstart', touch);
+// 	}, 1)
+// });
+
+document.addEventListener('touchcancel', ()=> {
+	alert(0);
+})
 
 window.addEventListener('load', init);
